@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-950: #060b18;
+  --color-navy-900: #0a1226;
+  --color-navy-800: #101b36;
+  --color-navy-700: #172448;
+  --color-navy-600: #1f2f5c;
+  --color-electric-500: #2f6fff;
+  --color-electric-400: #4f8bff;
+  --color-electric-300: #7fa8ff;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #060b18;
+  color: #e7ecf7;
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: #2f6fff;
+  color: white;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2f3b5c #0a1226;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a1226;
+}
+::-webkit-scrollbar-thumb {
+  background: #273a63;
+  border-radius: 8px;
+}
+
+.glass-panel {
+  background: linear-gradient(180deg, rgba(23, 36, 72, 0.6), rgba(10, 18, 38, 0.6));
+  border: 1px solid rgba(127, 168, 255, 0.12);
+  backdrop-filter: blur(16px);
+}
+
+.card-surface {
+  background: #0d1730;
+  border: 1px solid rgba(127, 168, 255, 0.1);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #7fa8ff, #4f8bff, #a7c2ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #2f6fff, #5b8cff);
+  box-shadow: 0 10px 30px -10px rgba(47, 111, 255, 0.6);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+  box-shadow: 0 14px 34px -8px rgba(47, 111, 255, 0.75);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  border-color: rgba(127, 168, 255, 0.35);
+  box-shadow: 0 20px 45px -20px rgba(47, 111, 255, 0.45);
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease both;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+.skeleton {
+  background: linear-gradient(90deg, #0d1730 0%, #16234a 50%, #0d1730 100%);
+  background-size: 800px 100%;
+  animation: shimmer 1.6s infinite linear;
+}
+
+.progress-track {
+  background: rgba(127, 168, 255, 0.12);
+}
+.progress-fill {
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #6b7aa3;
+}
+
+input, select, textarea {
+  color-scheme: dark;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid #4f8bff;
+  outline-offset: 2px;
+}
